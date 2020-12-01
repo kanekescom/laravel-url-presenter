@@ -41,7 +41,30 @@ class MyModel extends Model
      */
     public function getUrlAttribute()
     {
-        return ResourceUrlPresenter::generate('myroutes', $this);
+        return ResourceUrlPresenter::create('myroutes', $this);
+    }
+```
+
+Or with generate method, you have to set resource attribute
+
+```php
+class MyModel extends Model
+{
+    /**
+     * The attributes to get resources name.
+     *
+     * @return void
+     */
+    public $resource = 'myroutes';
+
+    /**
+     * Create url attribute.
+     *
+     * @return void
+     */
+    public function getUrlAttribute()
+    {
+        return ResourceUrlPresenter::generate($this);
     }
 ```
 
