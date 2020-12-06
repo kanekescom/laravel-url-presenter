@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 class ResourceUrlPresenter
 {
     /**
-     * Generate resource url resource name load by model.
+     * Generate route by route attribute model.
      *
      * @return object
      */
@@ -15,13 +15,13 @@ class ResourceUrlPresenter
     {
         $generate = (object) [];
         $availableRoutes = (array) $availableRoutes;
-        $indexRoute = "{$model->resource}.index";
-        $createRoute = "{$model->resource}.create";
-        $storeRoute = "{$model->resource}.store";
-        $showRoute = "{$model->resource}.show";
-        $editRoute = "{$model->resource}.edit";
-        $updateRoute = "{$model->resource}.update";
-        $destroyRoute = "{$model->resource}.destroy";
+        $indexRoute = "{$model->route}.index";
+        $createRoute = "{$model->route}.create";
+        $storeRoute = "{$model->route}.store";
+        $showRoute = "{$model->route}.show";
+        $editRoute = "{$model->route}.edit";
+        $updateRoute = "{$model->route}.update";
+        $destroyRoute = "{$model->route}.destroy";
 
         if (Route::has($indexRoute) && in_array('index', $availableRoutes)) {
             $generate->index = route($indexRoute);
@@ -55,21 +55,21 @@ class ResourceUrlPresenter
     }
 
     /**
-     * Generate resource url.
+     * Generate route url.
      *
      * @return object
      */
-    public static function create($resource, $model, $availableRoutes = ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy'])
+    public static function create($route, $model, $availableRoutes = ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy'])
     {
         $generate = (object) [];
         $availableRoutes = (array) $availableRoutes;
-        $indexRoute = "{$resource}.index";
-        $createRoute = "{$resource}.create";
-        $storeRoute = "{$resource}.store";
-        $showRoute = "{$resource}.show";
-        $editRoute = "{$resource}.edit";
-        $updateRoute = "{$resource}.update";
-        $destroyRoute = "{$resource}.destroy";
+        $indexRoute = "{$route}.index";
+        $createRoute = "{$route}.create";
+        $storeRoute = "{$route}.store";
+        $showRoute = "{$route}.show";
+        $editRoute = "{$route}.edit";
+        $updateRoute = "{$route}.update";
+        $destroyRoute = "{$route}.destroy";
 
         if (Route::has($indexRoute) && in_array('index', $availableRoutes)) {
             $generate->index = route($indexRoute);
