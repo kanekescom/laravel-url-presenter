@@ -6,6 +6,17 @@ use Kanekescom\LaravelUrlPresenter\ResourceUrlPresenter;
 
 trait HasUrlPresenter
 {
+    /**
+     * Create url attribute.
+     *
+     * @return void
+     */
+    public function getRouteAttribute()
+    {
+        $parentRoute = $this->parentRoute ? "{$this->parentRoute}." : $this->parentRoute;
+
+        return "{$parentRoute}{$this->singleRoute}";
+    }
 
     /**
      * Create url attribute.
@@ -14,6 +25,6 @@ trait HasUrlPresenter
      */
     public function getUrlAttribute()
     {
-        return ResourceUrlPresenter::generate($this);
+        return ResourceUrlPresenter::generate([$this]);
     }
 }
