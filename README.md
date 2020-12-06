@@ -55,7 +55,7 @@ class MyModel extends Model
      *
      * @return void
      */
-    public $resource = 'myroutes';
+    public $route = 'myroutes';
 
     /**
      * Create url attribute.
@@ -66,6 +66,23 @@ class MyModel extends Model
     {
         return ResourceUrlPresenter::generate($this);
     }
+```
+
+### With Trait
+
+```php
+use Kanekescom\LaravelUrlPresenter\HasUrlPresenter;
+
+class MyModel extends Model
+{
+    use HasUrlPresenter;
+
+    /**
+     * The attributes to get resources name.
+     *
+     * @return void
+     */
+    public $route = 'myroutes';
 ```
 
 ## Change log
