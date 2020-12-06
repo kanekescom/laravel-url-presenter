@@ -15,13 +15,14 @@ class ResourceUrlPresenter
     {
         $generate = (object) [];
         $availableRoutes = (array) $availableRoutes;
-        $indexRoute = "{$model->route}.index";
-        $createRoute = "{$model->route}.create";
-        $storeRoute = "{$model->route}.store";
-        $showRoute = "{$model->route}.show";
-        $editRoute = "{$model->route}.edit";
-        $updateRoute = "{$model->route}.update";
-        $destroyRoute = "{$model->route}.destroy";
+        $parentRoute = $model->parentRoute ? "{$model->parentRoute}." : $model->parentRoute;
+        $indexRoute = "{$parentRoute}{$model->route}.index";
+        $createRoute = "{$parentRoute}{$model->route}.create";
+        $storeRoute = "{$parentRoute}{$model->route}.store";
+        $showRoute = "{$parentRoute}{$model->route}.show";
+        $editRoute = "{$parentRoute}{$model->route}.edit";
+        $updateRoute = "{$parentRoute}{$model->route}.update";
+        $destroyRoute = "{$parentRoute}{$model->route}.destroy";
 
         if (Route::has($indexRoute) && in_array('index', $availableRoutes)) {
             $generate->index = route($indexRoute);
