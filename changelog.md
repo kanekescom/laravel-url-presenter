@@ -32,3 +32,9 @@ All notable changes to `laravel-url-presenter` will be documented in this file.
 ### Add
 
 -   HasUrlPresenter trait
+
+## Version 1.4
+
+### Add
+
+-   Make multiple model

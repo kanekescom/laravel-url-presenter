@@ -25,6 +25,6 @@ trait HasUrlPresenter
      */
     public function getUrlAttribute()
     {
-        return ResourceUrlPresenter::generate([$this]);
+        return ResourceUrlPresenter::generate($this);
     }
 }

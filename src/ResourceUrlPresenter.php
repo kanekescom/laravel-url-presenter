@@ -15,7 +15,6 @@ class ResourceUrlPresenter
     public static function generate($models, $availableRoutes = ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy'])
     {
         $model = is_array($models) ? Arr::last($models) : $models;
-
         $generate = (object) [];
         $availableRoutes = (array) $availableRoutes;
         $indexRoute = "{$model->route}.index";
