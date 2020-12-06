@@ -13,7 +13,9 @@ trait HasUrlPresenter
      */
     public function getRouteAttribute()
     {
-        $parentRoute = $this->parentRoute ? "{$this->parentRoute}." : $this->parentRoute;
+        $parentRoute = isset($this->parentRoute) && $this->parentRoute
+            ? "{$this->parentRoute}."
+            : $this->parentRoute;
 
         return "{$parentRoute}{$this->singleRoute}";
     }

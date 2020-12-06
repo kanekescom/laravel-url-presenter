@@ -51,11 +51,18 @@ Or with generate method, you have to set resource attribute
 class MyModel extends Model
 {
     /**
-     * The attributes to get resources name.
+     * The attributes to get parent resource route name.
      *
-     * @return void
+     * @return string
      */
-    public $route = 'myroutes';
+    public $parentRoute = '';
+
+    /**
+     * The attributes to get resource route name.
+     *
+     * @return string
+     */
+    public $singleRoute = 'myroutes';
 
     /**
      * Create url attribute.
@@ -78,11 +85,18 @@ class MyModel extends Model
     use HasUrlPresenter;
 
     /**
-     * The attributes to get resources name.
+     * The attributes to get parent resource route name.
      *
-     * @return void
+     * @return string
      */
-    public $route = 'myroutes';
+    public $parentRoute = '';
+
+    /**
+     * The attributes to get resource route name.
+     *
+     * @return string
+     */
+    public $singleRoute = 'myroutes';
 ```
 
 ## Change log
